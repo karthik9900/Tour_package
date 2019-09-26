@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            position: fixed;
+            border: 4px solid green;
+            border-radius: 6px;
+            margin-top: 150px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            margin-left: 480px;
+            height: 250px;
+            width: 30%;
+        }
+        
+        div h2 {
+            text-align: center;
+            font-style: italic;
+            font-size: 25px;
+            color: rgb(183, 0, 255);
+        }
+        
+        .names {
+            color: White;
+        }
+        
+        h3 {
+            color: white;
+        }
+    </style>
+    <title>Login</title>
+</head>
+
+<body bgcolor="light-yellow">
+    <center>
+
+
+        <form action="login" method="POST">
+
+            {% csrf_token %}
+            <div>
+
+                <h2>!@ LOGIN ACCOUNT !@</h2>
+                <table>
+
+                    <tr>
+                        <td class="names">username</p>
+                        </td>
+                        <td class="names">:</td>
+                        <td><input type="text" name="username" required></td>
+                    </tr>
+
+                    <tr>
+                        <td class="names">password</p>
+                        </td>
+                        <td class="names">:</td>
+                        <td><input type="password" name="password" required></td>
+                    </tr>
+
+
+
+                </table>
+
+                <br><br><br><br>
+
+
+
+                <input type="submit" value="login"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <a href="register">back</a>
+
+        </form>
+
+
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+
+    </center>
+    </div>
+
+</body>
+
+</html>

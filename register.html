@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            position: fixed;
+            border: 4px solid green;
+            border-radius: 6px;
+            margin-top: 60px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            margin-left: 450px;
+            height: 420px;
+            width: 30%;
+        }
+        
+        div h2 {
+            text-align: center;
+            font-style: italic;
+            font-size: 25px;
+            color: white;
+        }
+        
+        div a {
+            color: white;
+            font-style: bold;
+        }
+        
+        #kar {
+            padding-right: 110px;
+        }
+        
+        .names {
+            color: white;
+        }
+        
+        h3 {
+            color: white;
+        }
+    </style>
+</head>
+
+<body bgcolor="light-yellow">
+    <center>
+
+        <form action="register" method="POST">
+            {% csrf_token %}
+
+            <div>
+
+                <h2>!@ CREATE ACCOUNT !@</h2>
+                <table>
+                    <tr>
+                        <td class="names">First Name</p>
+                        </td>
+                        <td class="names">:</td>
+                        <td><input type="text" name="first_name" required></td>
+                    </tr>
+                    <tr>
+                        <td class="names">Last Name</p>
+                        </td>
+                        <td class="names">:</td>
+                        <td><input type="text" name="last_name" required></td>
+                    </tr>
+                    <tr>
+                        <td class="names">Username</p>
+                        </td>
+                        <td class="names">:</td>
+                        <td><input type="text" name="username" required> </td>
+
+                    </tr>
+                    <tr>
+                        <td class="names">email id</p>
+                        </td>
+                        <td class="names">:</td>
+                        <td><input type="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <td class="names">password</p>
+                        </td>
+                        <td class="names">:</td>
+                        <td><input type="password" name="password1" required></td>
+                    </tr>
+                    <tr>
+                        <td class="names">Renter-password</p>
+                        </td>
+                        <td class="names">:</td>
+                        <td><input type="password" name="password2" required></td>
+                    </tr>
+
+
+
+
+                    </td>
+                    </tr>
+
+
+                </table>
+                <br><br><br>
+                <input type="submit" value="Submit"> &nbsp; &nbsp;
+                <a href="login">Login</a>
+
+
+
+
+
+
+        </form>
+
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </center>
+
+    </div>
+
+
+</body>
+
+</html>
